@@ -1,0 +1,10 @@
+google_storage_bucket.data-lake-bucket: Refreshing state... [id=dtc_data_lake_raptor-land]
+google_bigquery_dataset.dataset: Refreshing state... [id=projects/raptor-land/datasets/trips_data_all]
+google_bigquery_table.table: Refreshing state... [id=projects/raptor-land/datasets/trips_data_all/tables/ny_trips]
+
+No changes. Your infrastructure matches the configuration.
+
+Terraform has compared your real infrastructure against your configuration and found no differences,
+so no changes are needed.
+
+Apply complete! Resources: 0 added, 0 changed, 0 destroyed.
