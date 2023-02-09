@@ -11,4 +11,6 @@ https://github.com/DataTalksClub/data-engineering-zoomcamp
 
 [week 2](hw_week2.md)
 
+[week 3](hw_week3.md)
+
 
