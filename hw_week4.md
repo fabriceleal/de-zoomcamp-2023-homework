@@ -20,10 +20,10 @@ where
 
 data studio
 
-pie chart
-data range dimension: pickpup_datetime
-dimension: service type
-metric: record count
+- pie chart
+- data range dimension: pickpup_datetime
+- dimension: service type
+- metric: record count
 
 94/6
 
@@ -33,7 +33,9 @@ metric: record count
 [stg_fhv_tripdata.sql](hw_week4/staging/stg_fhv_tripdata.sql)
 [fact_fhv_trips.sql](hw_week4/core/fact_fhv_trips.sql)
 
+```
 dbt run --select stg_fhv_tripdata --var 'is_test_run: false'
+```
 
 43244696
 	
