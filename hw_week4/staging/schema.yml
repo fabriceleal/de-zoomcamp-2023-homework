@@ -1,0 +1,68 @@
+version: 2
+
+sources:
+  - name: staging
+    database: raptor-land
+    schema: de_zoomcamp
+
+    tables:
+      - name: yellow_tripdata
+      - name: green_tripdata
+      - name: fvh_data
+
+models:
+  - name: stg_green_tripdata
+    description: >
+      green taxi data
+    columns:
+      - name: tripid
+        description: primary key
+        tests:
+          - unique:
+              severity: warn
+          - not_null:
+              severity: warn
+      - name: dropoff_locationid
+        tests:
+          - relationships:
+              to: ref('taxi_zone_lookup')
+              field: locationid
+      - name: pickup_locationid
+        tests:
+          - relationships:
+              to: ref('taxi_zone_lookup')
+              field: locationid
+      - name: payment_type
+        tests:
+          - accepted_values:
+              values: "{{ var('payment_type_values') }}"
+              severity: warn
+              quote: false
+  - name: stg_yellow_tripdata
+    description: >
+      yellow taxi data
+    columns:
+      - name: tripid
+        description: primary key
+        tests:
+          - unique:
+              severity: warn
+          - not_null:
+              severity: warn
+      - name: dropoff_locationid
+        tests:
+          - relationships:
+              to: ref('taxi_zone_lookup')
+              field: locationid
+      - name: pickup_locationid
+        tests:
+          - relationships:
+              to: ref('taxi_zone_lookup')
+              field: locationid
+      - name: payment_type
+        tests:
+          - accepted_values:
+              values: "{{ var('payment_type_values') }}"
+              severity: warn
+              quote: false
+            
