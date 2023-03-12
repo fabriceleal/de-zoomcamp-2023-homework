@@ -12,9 +12,9 @@ Topic partitioning, consumer group id
 
 # Question 4
 
-due to their low cardinality, the following are good candidates
+due to their low cardinality, the following are good candidates:
 
-payment_type, vendor_id, passenger_count
+payment_type [1..5], vendor_id [1, 2], passenger_count [0..9]
 
 we may extract month to partition by date fields, but we shouldnt use them as is
 
